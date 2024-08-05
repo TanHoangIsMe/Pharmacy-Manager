@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Pharmacy Manager\\Pharmacy Manager\\Pharmacy Manager.csproj": {}
+    "E:\\Unity Project\\Pharmacy-Manager\\Pharmacy Manager\\Pharmacy Manager.csproj": {}
   },
   "projects": {
-    "D:\\Pharmacy Manager\\Pharmacy Manager\\Pharmacy Manager.csproj": {
+    "E:\\Unity Project\\Pharmacy-Manager\\Pharmacy Manager\\Pharmacy Manager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Pharmacy Manager\\Pharmacy Manager\\Pharmacy Manager.csproj",
+        "projectUniqueName": "E:\\Unity Project\\Pharmacy-Manager\\Pharmacy Manager\\Pharmacy Manager.csproj",
         "projectName": "Pharmacy Manager",
-        "projectPath": "D:\\Pharmacy Manager\\Pharmacy Manager\\Pharmacy Manager.csproj",
+        "projectPath": "E:\\Unity Project\\Pharmacy-Manager\\Pharmacy Manager\\Pharmacy Manager.csproj",
         "packagesPath": "C:\\Users\\TanHoang\\.nuget\\packages\\",
-        "outputPath": "D:\\Pharmacy Manager\\Pharmacy Manager\\obj\\",
+        "outputPath": "E:\\Unity Project\\Pharmacy-Manager\\Pharmacy Manager\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\TanHoang\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -48,6 +48,10 @@
             "ClosedXML": {
               "target": "Package",
               "version": "[0.102.3, )"
+            },
+            "EPPlus": {
+              "target": "Package",
+              "version": "[7.2.2, )"
             }
           },
           "imports": [

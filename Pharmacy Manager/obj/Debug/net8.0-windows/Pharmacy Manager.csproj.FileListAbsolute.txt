@@ -26,3 +26,44 @@ D:\Pharmacy Manager\Pharmacy Manager\bin\Debug\net8.0-windows\SixLabors.Fonts.dl
 D:\Pharmacy Manager\Pharmacy Manager\bin\Debug\net8.0-windows\XLParser.dll
 D:\Pharmacy Manager\Pharmacy Manager\obj\Debug\net8.0-windows\Pharmacy Manager.csproj.AssemblyReference.cache
 D:\Pharmacy Manager\Pharmacy Manager\obj\Debug\net8.0-windows\Pharmacy.29AA6D1E.Up2Date
+E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\bin\Debug\net8.0-windows\Pharmacy Manager.exe
+E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\bin\Debug\net8.0-windows\Pharmacy Manager.deps.json
+E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\bin\Debug\net8.0-windows\Pharmacy Manager.runtimeconfig.json
+E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\bin\Debug\net8.0-windows\Pharmacy Manager.dll
+E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\bin\Debug\net8.0-windows\Pharmacy Manager.pdb
+E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\bin\Debug\net8.0-windows\ClosedXML.dll
+E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\bin\Debug\net8.0-windows\DocumentFormat.OpenXml.dll
+E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\bin\Debug\net8.0-windows\ExcelNumberFormat.dll
+E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\bin\Debug\net8.0-windows\Irony.dll
+E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\bin\Debug\net8.0-windows\SixLabors.Fonts.dll
+E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\bin\Debug\net8.0-windows\XLParser.dll
+E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\obj\Debug\net8.0-windows\Pharmacy Manager.csproj.AssemblyReference.cache
+E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\obj\Debug\net8.0-windows\Pharmacy_Manager.Medicines.resources
+E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\obj\Debug\net8.0-windows\Pharmacy_Manager.Menu.resources
+E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\obj\Debug\net8.0-windows\Pharmacy_Manager.Order.resources
+E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\obj\Debug\net8.0-windows\Pharmacy_Manager.Properties.Resources.resources
+E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\obj\Debug\net8.0-windows\Pharmacy_Manager.Revenue.resources
+E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\obj\Debug\net8.0-windows\Pharmacy Manager.csproj.GenerateResource.cache
+E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\obj\Debug\net8.0-windows\Pharmacy Manager.GeneratedMSBuildEditorConfig.editorconfig
+E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\obj\Debug\net8.0-windows\Pharmacy Manager.AssemblyInfoInputs.cache
+E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\obj\Debug\net8.0-windows\Pharmacy Manager.AssemblyInfo.cs
+E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\obj\Debug\net8.0-windows\Pharmacy Manager.csproj.CoreCompileInputs.cache
+E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\obj\Debug\net8.0-windows\Pharmacy Manager.sourcelink.json
+E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\obj\Debug\net8.0-windows\Pharmacy.29AA6D1E.Up2Date
+E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\obj\Debug\net8.0-windows\Pharmacy Manager.dll
+E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\obj\Debug\net8.0-windows\refint\Pharmacy Manager.dll
+E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\obj\Debug\net8.0-windows\Pharmacy Manager.pdb
+E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\obj\Debug\net8.0-windows\Pharmacy Manager.genruntimeconfig.cache
+E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\obj\Debug\net8.0-windows\ref\Pharmacy Manager.dll
+E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\bin\Debug\net8.0-windows\EPPlus.dll
+E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\bin\Debug\net8.0-windows\EPPlus.Interfaces.dll
+E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\bin\Debug\net8.0-windows\EPPlus.System.Drawing.dll
+E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.dll
+E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
+E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.FileExtensions.dll
+E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.Json.dll
+E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\bin\Debug\net8.0-windows\Microsoft.Extensions.FileProviders.Abstractions.dll
+E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\bin\Debug\net8.0-windows\Microsoft.Extensions.FileProviders.Physical.dll
+E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\bin\Debug\net8.0-windows\Microsoft.Extensions.FileSystemGlobbing.dll
+E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\bin\Debug\net8.0-windows\Microsoft.Extensions.Primitives.dll
+E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\bin\Debug\net8.0-windows\Microsoft.IO.RecyclableMemoryStream.dll
