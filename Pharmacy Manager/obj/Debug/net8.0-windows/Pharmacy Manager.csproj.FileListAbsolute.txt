@@ -1,0 +1,28 @@
+D:\Pharmacy Manager\Pharmacy Manager\bin\Debug\net8.0-windows\Pharmacy Manager.exe
+D:\Pharmacy Manager\Pharmacy Manager\bin\Debug\net8.0-windows\Pharmacy Manager.deps.json
+D:\Pharmacy Manager\Pharmacy Manager\bin\Debug\net8.0-windows\Pharmacy Manager.runtimeconfig.json
+D:\Pharmacy Manager\Pharmacy Manager\bin\Debug\net8.0-windows\Pharmacy Manager.dll
+D:\Pharmacy Manager\Pharmacy Manager\bin\Debug\net8.0-windows\Pharmacy Manager.pdb
+D:\Pharmacy Manager\Pharmacy Manager\obj\Debug\net8.0-windows\Pharmacy_Manager.Medicines.resources
+D:\Pharmacy Manager\Pharmacy Manager\obj\Debug\net8.0-windows\Pharmacy_Manager.Menu.resources
+D:\Pharmacy Manager\Pharmacy Manager\obj\Debug\net8.0-windows\Pharmacy_Manager.Properties.Resources.resources
+D:\Pharmacy Manager\Pharmacy Manager\obj\Debug\net8.0-windows\Pharmacy Manager.csproj.GenerateResource.cache
+D:\Pharmacy Manager\Pharmacy Manager\obj\Debug\net8.0-windows\Pharmacy Manager.GeneratedMSBuildEditorConfig.editorconfig
+D:\Pharmacy Manager\Pharmacy Manager\obj\Debug\net8.0-windows\Pharmacy Manager.AssemblyInfoInputs.cache
+D:\Pharmacy Manager\Pharmacy Manager\obj\Debug\net8.0-windows\Pharmacy Manager.AssemblyInfo.cs
+D:\Pharmacy Manager\Pharmacy Manager\obj\Debug\net8.0-windows\Pharmacy Manager.csproj.CoreCompileInputs.cache
+D:\Pharmacy Manager\Pharmacy Manager\obj\Debug\net8.0-windows\Pharmacy Manager.dll
+D:\Pharmacy Manager\Pharmacy Manager\obj\Debug\net8.0-windows\refint\Pharmacy Manager.dll
+D:\Pharmacy Manager\Pharmacy Manager\obj\Debug\net8.0-windows\Pharmacy Manager.pdb
+D:\Pharmacy Manager\Pharmacy Manager\obj\Debug\net8.0-windows\Pharmacy Manager.genruntimeconfig.cache
+D:\Pharmacy Manager\Pharmacy Manager\obj\Debug\net8.0-windows\ref\Pharmacy Manager.dll
+D:\Pharmacy Manager\Pharmacy Manager\obj\Debug\net8.0-windows\Pharmacy_Manager.Order.resources
+D:\Pharmacy Manager\Pharmacy Manager\obj\Debug\net8.0-windows\Pharmacy_Manager.Revenue.resources
+D:\Pharmacy Manager\Pharmacy Manager\bin\Debug\net8.0-windows\ClosedXML.dll
+D:\Pharmacy Manager\Pharmacy Manager\bin\Debug\net8.0-windows\DocumentFormat.OpenXml.dll
+D:\Pharmacy Manager\Pharmacy Manager\bin\Debug\net8.0-windows\ExcelNumberFormat.dll
+D:\Pharmacy Manager\Pharmacy Manager\bin\Debug\net8.0-windows\Irony.dll
+D:\Pharmacy Manager\Pharmacy Manager\bin\Debug\net8.0-windows\SixLabors.Fonts.dll
+D:\Pharmacy Manager\Pharmacy Manager\bin\Debug\net8.0-windows\XLParser.dll
+D:\Pharmacy Manager\Pharmacy Manager\obj\Debug\net8.0-windows\Pharmacy Manager.csproj.AssemblyReference.cache
+D:\Pharmacy Manager\Pharmacy Manager\obj\Debug\net8.0-windows\Pharmacy.29AA6D1E.Up2Date
