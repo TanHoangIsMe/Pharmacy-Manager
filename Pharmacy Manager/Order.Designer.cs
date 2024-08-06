@@ -28,19 +28,111 @@
         /// </summary>
         private void InitializeComponent()
         {
+            MedicinesDTGV = new DataGridView();
+            OrderDTGV = new DataGridView();
+            STT = new DataGridViewTextBoxColumn();
+            MedicineName = new DataGridViewTextBoxColumn();
+            Quantity = new DataGridViewTextBoxColumn();
+            AddBT = new Button();
+            DeleteBT = new Button();
+            ((System.ComponentModel.ISupportInitialize)MedicinesDTGV).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)OrderDTGV).BeginInit();
             SuspendLayout();
+            // 
+            // MedicinesDTGV
+            // 
+            MedicinesDTGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            MedicinesDTGV.Location = new Point(12, 12);
+            MedicinesDTGV.Name = "MedicinesDTGV";
+            MedicinesDTGV.RowHeadersWidth = 51;
+            MedicinesDTGV.Size = new Size(540, 552);
+            MedicinesDTGV.TabIndex = 0;
+            MedicinesDTGV.CellClick += MedicinesDTGV_CellClick;
+            // 
+            // OrderDTGV
+            // 
+            OrderDTGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            OrderDTGV.Columns.AddRange(new DataGridViewColumn[] { STT, MedicineName, Quantity });
+            OrderDTGV.Location = new Point(670, 12);
+            OrderDTGV.Name = "OrderDTGV";
+            OrderDTGV.RowHeadersWidth = 51;
+            OrderDTGV.Size = new Size(502, 552);
+            OrderDTGV.TabIndex = 1;
+            OrderDTGV.CellClick += OrderDTGV_CellClick;
+            // 
+            // STT
+            // 
+            STT.HeaderText = "STT";
+            STT.MinimumWidth = 6;
+            STT.Name = "STT";
+            STT.Width = 125;
+            // 
+            // MedicineName
+            // 
+            MedicineName.HeaderText = "Tên Thuốc";
+            MedicineName.MinimumWidth = 6;
+            MedicineName.Name = "MedicineName";
+            MedicineName.Width = 125;
+            // 
+            // Quantity
+            // 
+            Quantity.HeaderText = "Số Lượng";
+            Quantity.MinimumWidth = 6;
+            Quantity.Name = "Quantity";
+            Quantity.Width = 125;
+            // 
+            // AddBT
+            // 
+            AddBT.BackColor = Color.FromArgb(255, 192, 192);
+            AddBT.Font = new Font("Arial Narrow", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            AddBT.Location = new Point(569, 240);
+            AddBT.Name = "AddBT";
+            AddBT.Size = new Size(84, 68);
+            AddBT.TabIndex = 2;
+            AddBT.Text = "Thêm";
+            AddBT.UseVisualStyleBackColor = false;
+            AddBT.Click += AddBT_Click;
+            // 
+            // DeleteBT
+            // 
+            DeleteBT.BackColor = Color.FromArgb(255, 255, 192);
+            DeleteBT.Font = new Font("Arial Narrow", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            DeleteBT.Location = new Point(569, 325);
+            DeleteBT.Name = "DeleteBT";
+            DeleteBT.Size = new Size(84, 68);
+            DeleteBT.TabIndex = 3;
+            DeleteBT.Text = "Xóa";
+            DeleteBT.UseVisualStyleBackColor = false;
+            DeleteBT.Click += DeleteBT_Click;
             // 
             // Order
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = Color.White;
+            ClientSize = new Size(1184, 576);
+            Controls.Add(DeleteBT);
+            Controls.Add(AddBT);
+            Controls.Add(OrderDTGV);
+            Controls.Add(MedicinesDTGV);
             Name = "Order";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Order";
+            Load += Order_Load;
+            Resize += Order_Resize;
+            ((System.ComponentModel.ISupportInitialize)MedicinesDTGV).EndInit();
+            ((System.ComponentModel.ISupportInitialize)OrderDTGV).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
+
+        private DataGridView MedicinesDTGV;
+        private DataGridView OrderDTGV;
+        private DataGridViewTextBoxColumn STT;
+        private DataGridViewTextBoxColumn MedicineName;
+        private DataGridViewTextBoxColumn Quantity;
+        private Button AddBT;
+        private Button DeleteBT;
     }
 }

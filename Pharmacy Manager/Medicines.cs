@@ -6,8 +6,8 @@ namespace Pharmacy_Manager
 {
     public partial class Medicines : Form
     {
-        // Đường dẫn tới file Excel của bạn
-        string filePath = @"C:\Users\TanHoang\Downloads\MedicineData.xlsx";
+        DataPath dataPath = new DataPath();
+        string filePath;
 
         public Medicines()
         {
@@ -18,6 +18,7 @@ namespace Pharmacy_Manager
 
         private void Medicines_Load(object sender, EventArgs e)
         {
+            filePath = dataPath.filePath;
             // Gọi hàm để tải dữ liệu vào DataGridView
             LoadExcelDataToDataGridView(filePath, MedicinesDGV);
             MedicinesDGV.ReadOnly = true;
