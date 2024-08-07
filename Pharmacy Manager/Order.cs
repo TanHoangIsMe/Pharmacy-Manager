@@ -107,8 +107,8 @@ namespace Pharmacy_Manager
         private void ResizeDTGV()
         {
             // Cập nhật kích thước của d1 và d2 khi Form thay đổi kích thước
-            MedicinesDTGV.Width = this.ClientSize.Width / 2 - 50;
-            OrderDTGV.Width = this.ClientSize.Width / 2 - 50;
+            MedicinesDTGV.Width = this.ClientSize.Width / 2 - 100;
+            OrderDTGV.Width = this.ClientSize.Width / 2 - 100;
             OrderDTGV.Left = MedicinesDTGV.Right;
 
             // Tính toán vị trí để Button nằm giữa màn hình
@@ -117,9 +117,10 @@ namespace Pharmacy_Manager
 
             // Đặt vị trí của Button
             AddBT.Location = new Point(centerX, centerY - 140);
-            DeleteBT.Location = new Point(centerX, centerY -50);
+            DeleteBT.Location = new Point(centerX, centerY - 50);
             ExportBT.Location = new Point(centerX, centerY + 50);
             ImageBT.Location = new Point(centerX, centerY + 140);
+            SearchTB.Location = new Point(centerX - 48, centerY - 200);
         }
 
         private void MedicinesDTGV_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -338,6 +339,26 @@ namespace Pharmacy_Manager
                     string filePath = openFileDialog.FileName;
                     ConvertExcelToPng(filePath);
                 }
+            }
+        }
+
+        private void SearchTB_TextChanged(object sender, EventArgs e)
+        {
+            // Lấy nội dung tìm kiếm từ TextBox
+            string searchText = SearchTB.Text.Trim().ToLower();
+
+            // Kiểm tra xem DataGridView có DataSource là DataTable không
+            if (MedicinesDTGV.DataSource is DataTable dataTable)
+            {
+                // Tạo bộ lọc cho DataTable
+                // Lấy tên cột thứ hai từ DataTable
+                string columnName = dataTable.Columns[1].ColumnName;
+
+                // Tạo biểu thức lọc cho DataTable
+                string filterExpression = $"[{columnName}] LIKE '%{searchText}%'";
+
+                // Áp dụng bộ lọc cho DataTable
+                dataTable.DefaultView.RowFilter = filterExpression;
             }
         }
     }

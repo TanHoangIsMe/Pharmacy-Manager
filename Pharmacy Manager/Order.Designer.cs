@@ -37,6 +37,7 @@
             DeleteBT = new Button();
             ExportBT = new Button();
             ImageBT = new Button();
+            SearchTB = new TextBox();
             ((System.ComponentModel.ISupportInitialize)MedicinesDTGV).BeginInit();
             ((System.ComponentModel.ISupportInitialize)OrderDTGV).BeginInit();
             SuspendLayout();
@@ -47,7 +48,7 @@
             MedicinesDTGV.Location = new Point(12, 12);
             MedicinesDTGV.Name = "MedicinesDTGV";
             MedicinesDTGV.RowHeadersWidth = 51;
-            MedicinesDTGV.Size = new Size(540, 552);
+            MedicinesDTGV.Size = new Size(501, 552);
             MedicinesDTGV.TabIndex = 0;
             MedicinesDTGV.CellClick += MedicinesDTGV_CellClick;
             // 
@@ -55,10 +56,10 @@
             // 
             OrderDTGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             OrderDTGV.Columns.AddRange(new DataGridViewColumn[] { STT, MedicineName, Quantity });
-            OrderDTGV.Location = new Point(670, 12);
+            OrderDTGV.Location = new Point(703, 12);
             OrderDTGV.Name = "OrderDTGV";
             OrderDTGV.RowHeadersWidth = 51;
-            OrderDTGV.Size = new Size(502, 552);
+            OrderDTGV.Size = new Size(469, 552);
             OrderDTGV.TabIndex = 1;
             OrderDTGV.CellClick += OrderDTGV_CellClick;
             // 
@@ -131,18 +132,30 @@
             ImageBT.UseVisualStyleBackColor = false;
             ImageBT.Click += ImageBT_Click;
             // 
+            // SearchTB
+            // 
+            SearchTB.Font = new Font("Arial Narrow", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            SearchTB.Location = new Point(519, 58);
+            SearchTB.Name = "SearchTB";
+            SearchTB.PlaceholderText = "Tìm...";
+            SearchTB.Size = new Size(178, 38);
+            SearchTB.TabIndex = 6;
+            SearchTB.TextChanged += SearchTB_TextChanged;
+            // 
             // Order
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
+            BackColor = Color.FromArgb(192, 192, 255);
             ClientSize = new Size(1184, 576);
+            Controls.Add(SearchTB);
             Controls.Add(ImageBT);
             Controls.Add(ExportBT);
             Controls.Add(DeleteBT);
             Controls.Add(AddBT);
             Controls.Add(OrderDTGV);
             Controls.Add(MedicinesDTGV);
+            ForeColor = Color.Black;
             Name = "Order";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Order";
@@ -151,6 +164,7 @@
             ((System.ComponentModel.ISupportInitialize)MedicinesDTGV).EndInit();
             ((System.ComponentModel.ISupportInitialize)OrderDTGV).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -164,5 +178,6 @@
         private Button DeleteBT;
         private Button ExportBT;
         private Button ImageBT;
+        private TextBox SearchTB;
     }
 }
