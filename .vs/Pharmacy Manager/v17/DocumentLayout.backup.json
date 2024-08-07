@@ -19,12 +19,12 @@
       "RelativeMoniker": "D:0:0:{22C8D1B9-D554-4AD6-B548-2ACE3BDAB492}|Pharmacy Manager\\Pharmacy Manager.csproj|solutionrelative:pharmacy manager\\medicines.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{22C8D1B9-D554-4AD6-B548-2ACE3BDAB492}|Pharmacy Manager\\Pharmacy Manager.csproj|e:\\unity project\\pharmacy-manager\\pharmacy manager\\medicines.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{22C8D1B9-D554-4AD6-B548-2ACE3BDAB492}|Pharmacy Manager\\Pharmacy Manager.csproj|solutionrelative:pharmacy manager\\medicines.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{22C8D1B9-D554-4AD6-B548-2ACE3BDAB492}|Pharmacy Manager\\Pharmacy Manager.csproj|e:\\unity project\\pharmacy-manager\\pharmacy manager\\datapath.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{22C8D1B9-D554-4AD6-B548-2ACE3BDAB492}|Pharmacy Manager\\Pharmacy Manager.csproj|solutionrelative:pharmacy manager\\datapath.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22C8D1B9-D554-4AD6-B548-2ACE3BDAB492}|Pharmacy Manager\\Pharmacy Manager.csproj|e:\\unity project\\pharmacy-manager\\pharmacy manager\\medicines.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22C8D1B9-D554-4AD6-B548-2ACE3BDAB492}|Pharmacy Manager\\Pharmacy Manager.csproj|solutionrelative:pharmacy manager\\medicines.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{22C8D1B9-D554-4AD6-B548-2ACE3BDAB492}|Pharmacy Manager\\Pharmacy Manager.csproj|E:\\Unity Project\\Pharmacy-Manager\\pharmacy manager\\medicines.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -52,10 +52,9 @@
               "RelativeDocumentMoniker": "Pharmacy Manager\\Medicines.Designer.cs",
               "ToolTip": "E:\\Unity Project\\Pharmacy-Manager\\Pharmacy Manager\\Medicines.Designer.cs",
               "RelativeToolTip": "Pharmacy Manager\\Medicines.Designer.cs",
-              "ViewState": "AgIAAGYAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAHUAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-06T09:43:23.681Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-06T09:43:23.681Z"
             },
             {
               "$type": "Document",
@@ -65,7 +64,7 @@
               "RelativeDocumentMoniker": "Pharmacy Manager\\Order.cs",
               "ToolTip": "E:\\Unity Project\\Pharmacy-Manager\\Pharmacy Manager\\Order.cs",
               "RelativeToolTip": "Pharmacy Manager\\Order.cs",
-              "ViewState": "AgIAAHkAAAAAAAAAAAAwwIUAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAE4AAAAAAAAAAAA7wFoAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-06T09:30:18.04Z",
               "EditorCaption": ""
@@ -78,7 +77,7 @@
               "RelativeDocumentMoniker": "Pharmacy Manager\\Order.Designer.cs",
               "ToolTip": "E:\\Unity Project\\Pharmacy-Manager\\Pharmacy Manager\\Order.Designer.cs",
               "RelativeToolTip": "Pharmacy Manager\\Order.Designer.cs",
-              "ViewState": "AgIAAD4AAAAAAAAAAAAYwHUAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-06T09:40:31.531Z",
               "EditorCaption": ""
@@ -97,26 +96,25 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "DataPath.cs",
               "DocumentMoniker": "E:\\Unity Project\\Pharmacy-Manager\\Pharmacy Manager\\DataPath.cs",
               "RelativeDocumentMoniker": "Pharmacy Manager\\DataPath.cs",
               "ToolTip": "E:\\Unity Project\\Pharmacy-Manager\\Pharmacy Manager\\DataPath.cs",
               "RelativeToolTip": "Pharmacy Manager\\DataPath.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAABSAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-06T09:08:35.658Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-06T09:08:35.658Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Medicines.cs",
               "DocumentMoniker": "E:\\Unity Project\\Pharmacy-Manager\\Pharmacy Manager\\Medicines.cs",
               "RelativeDocumentMoniker": "Pharmacy Manager\\Medicines.cs",
               "ToolTip": "E:\\Unity Project\\Pharmacy-Manager\\Pharmacy Manager\\Medicines.cs",
               "RelativeToolTip": "Pharmacy Manager\\Medicines.cs",
-              "ViewState": "AgIAANoAAAAAAAAAAAAswOQAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA8AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-05T12:44:26.344Z",
               "EditorCaption": ""
@@ -130,8 +128,7 @@
               "ToolTip": "E:\\Unity Project\\Pharmacy-Manager\\Pharmacy Manager\\Menu.cs [Design]",
               "RelativeToolTip": "Pharmacy Manager\\Menu.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-05T12:29:54.06Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-08-05T12:29:54.06Z"
             },
             {
               "$type": "Document",
@@ -142,8 +139,7 @@
               "ToolTip": "E:\\Unity Project\\Pharmacy-Manager\\Pharmacy Manager\\Medicines.cs [Design]",
               "RelativeToolTip": "Pharmacy Manager\\Medicines.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-05T12:29:07.58Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-08-05T12:29:07.58Z"
             }
           ]
         }

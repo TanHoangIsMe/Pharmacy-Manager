@@ -35,6 +35,8 @@
             Quantity = new DataGridViewTextBoxColumn();
             AddBT = new Button();
             DeleteBT = new Button();
+            ExportBT = new Button();
+            ImageBT = new Button();
             ((System.ComponentModel.ISupportInitialize)MedicinesDTGV).BeginInit();
             ((System.ComponentModel.ISupportInitialize)OrderDTGV).BeginInit();
             SuspendLayout();
@@ -85,7 +87,7 @@
             // 
             AddBT.BackColor = Color.FromArgb(255, 192, 192);
             AddBT.Font = new Font("Arial Narrow", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            AddBT.Location = new Point(569, 240);
+            AddBT.Location = new Point(569, 112);
             AddBT.Name = "AddBT";
             AddBT.Size = new Size(84, 68);
             AddBT.TabIndex = 2;
@@ -97,7 +99,7 @@
             // 
             DeleteBT.BackColor = Color.FromArgb(255, 255, 192);
             DeleteBT.Font = new Font("Arial Narrow", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            DeleteBT.Location = new Point(569, 325);
+            DeleteBT.Location = new Point(569, 199);
             DeleteBT.Name = "DeleteBT";
             DeleteBT.Size = new Size(84, 68);
             DeleteBT.TabIndex = 3;
@@ -105,12 +107,38 @@
             DeleteBT.UseVisualStyleBackColor = false;
             DeleteBT.Click += DeleteBT_Click;
             // 
+            // ExportBT
+            // 
+            ExportBT.BackColor = Color.FromArgb(192, 255, 255);
+            ExportBT.Font = new Font("Arial Narrow", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ExportBT.Location = new Point(569, 290);
+            ExportBT.Name = "ExportBT";
+            ExportBT.Size = new Size(84, 68);
+            ExportBT.TabIndex = 4;
+            ExportBT.Text = "Xuất File";
+            ExportBT.UseVisualStyleBackColor = false;
+            ExportBT.Click += ExportBT_Click;
+            // 
+            // ImageBT
+            // 
+            ImageBT.BackColor = Color.FromArgb(192, 255, 192);
+            ImageBT.Font = new Font("Arial Narrow", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ImageBT.Location = new Point(569, 383);
+            ImageBT.Name = "ImageBT";
+            ImageBT.Size = new Size(84, 68);
+            ImageBT.TabIndex = 5;
+            ImageBT.Text = "Tạo Ảnh";
+            ImageBT.UseVisualStyleBackColor = false;
+            ImageBT.Click += ImageBT_Click;
+            // 
             // Order
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1184, 576);
+            Controls.Add(ImageBT);
+            Controls.Add(ExportBT);
             Controls.Add(DeleteBT);
             Controls.Add(AddBT);
             Controls.Add(OrderDTGV);
@@ -134,5 +162,7 @@
         private DataGridViewTextBoxColumn Quantity;
         private Button AddBT;
         private Button DeleteBT;
+        private Button ExportBT;
+        private Button ImageBT;
     }
 }
