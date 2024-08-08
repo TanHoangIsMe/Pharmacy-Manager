@@ -44,24 +44,24 @@
             // 
             // MedicinesDTGV
             // 
-            MedicinesDTGV.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            MedicinesDTGV.Anchor = AnchorStyles.None;
             MedicinesDTGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             MedicinesDTGV.Location = new Point(12, 86);
             MedicinesDTGV.Name = "MedicinesDTGV";
             MedicinesDTGV.RowHeadersWidth = 51;
-            MedicinesDTGV.Size = new Size(565, 478);
+            MedicinesDTGV.Size = new Size(543, 478);
             MedicinesDTGV.TabIndex = 0;
             MedicinesDTGV.CellClick += MedicinesDTGV_CellClick;
             // 
             // OrderDTGV
             // 
-            OrderDTGV.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            OrderDTGV.Anchor = AnchorStyles.None;
             OrderDTGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             OrderDTGV.Columns.AddRange(new DataGridViewColumn[] { STT, MedicineName, Quantity });
-            OrderDTGV.Location = new Point(607, 86);
+            OrderDTGV.Location = new Point(627, 86);
             OrderDTGV.Name = "OrderDTGV";
             OrderDTGV.RowHeadersWidth = 51;
-            OrderDTGV.Size = new Size(565, 478);
+            OrderDTGV.Size = new Size(545, 478);
             OrderDTGV.TabIndex = 1;
             OrderDTGV.CellClick += OrderDTGV_CellClick;
             // 

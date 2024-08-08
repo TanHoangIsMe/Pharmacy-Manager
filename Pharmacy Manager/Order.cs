@@ -107,10 +107,9 @@ namespace Pharmacy_Manager
             MedicinesDTGV.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             MedicinesDTGV.Width = this.ClientSize.Width / 2; // Chiếm 50% chiều ngang ban đầu
             MedicinesDTGV.Height = this.ClientSize.Height; // Chiều cao ban đầu
-            ////OrderDTGV.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            //OrderDTGV.Dock = DockStyle.Right;
-            ////OrderDTGV.Width = this.ClientSize.Width - MedicinesDTGV.Width;
-            //OrderDTGV.Height = this.ClientSize.Height - MedicinesDTGV.Top;
+            OrderDTGV.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            OrderDTGV.Width = this.ClientSize.Width / 2;
+            OrderDTGV.Height = this.ClientSize.Height;
         }
 
         private void MedicinesDTGV_CellClick(object sender, DataGridViewCellEventArgs e)
