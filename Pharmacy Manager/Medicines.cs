@@ -62,6 +62,7 @@ namespace Pharmacy_Manager
 
                 UpdateDataGridView();
                 MessageBox.Show("Thêm Thuốc Thành Công");
+                NameTB.Clear();
             }
             catch (Exception ex)
             {
@@ -121,6 +122,7 @@ namespace Pharmacy_Manager
                 // Cập nhật DataGridView
                 UpdateDataGridView();
                 MessageBox.Show("Xóa Thuốc Thành Công");
+                STTTB.Clear();
             }
             catch (Exception ex)
             {
@@ -182,6 +184,8 @@ namespace Pharmacy_Manager
                 // Cập nhật DataGridView
                 UpdateDataGridView();
                 MessageBox.Show("Cập Nhật Thuốc Thành Công");
+                NameTB.Clear();
+                STTTB.Clear();
             }
             catch (Exception ex)
             {

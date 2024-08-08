@@ -23,11 +23,15 @@ namespace Pharmacy_Manager
         private void AddBT_Click(object sender, EventArgs e)
         {
             AddDataToExcel(true);
+            LoadData();
+            MoneyTB.Clear();
         }
 
         private void AdddBT_Click(object sender, EventArgs e)
         {
             AddDataToExcel(false);
+            LoadData();
+            MoneyTB.Clear();
         }
 
         public void AddDataToExcel(bool type)
