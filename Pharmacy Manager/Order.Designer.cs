@@ -44,22 +44,24 @@
             // 
             // MedicinesDTGV
             // 
+            MedicinesDTGV.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             MedicinesDTGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            MedicinesDTGV.Location = new Point(12, 12);
+            MedicinesDTGV.Location = new Point(12, 86);
             MedicinesDTGV.Name = "MedicinesDTGV";
             MedicinesDTGV.RowHeadersWidth = 51;
-            MedicinesDTGV.Size = new Size(501, 552);
+            MedicinesDTGV.Size = new Size(565, 478);
             MedicinesDTGV.TabIndex = 0;
             MedicinesDTGV.CellClick += MedicinesDTGV_CellClick;
             // 
             // OrderDTGV
             // 
+            OrderDTGV.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             OrderDTGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             OrderDTGV.Columns.AddRange(new DataGridViewColumn[] { STT, MedicineName, Quantity });
-            OrderDTGV.Location = new Point(703, 12);
+            OrderDTGV.Location = new Point(607, 86);
             OrderDTGV.Name = "OrderDTGV";
             OrderDTGV.RowHeadersWidth = 51;
-            OrderDTGV.Size = new Size(469, 552);
+            OrderDTGV.Size = new Size(565, 478);
             OrderDTGV.TabIndex = 1;
             OrderDTGV.CellClick += OrderDTGV_CellClick;
             // 
@@ -88,7 +90,7 @@
             // 
             AddBT.BackColor = Color.FromArgb(255, 192, 192);
             AddBT.Font = new Font("Arial Narrow", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            AddBT.Location = new Point(569, 112);
+            AddBT.Location = new Point(765, 12);
             AddBT.Name = "AddBT";
             AddBT.Size = new Size(84, 68);
             AddBT.TabIndex = 2;
@@ -100,7 +102,7 @@
             // 
             DeleteBT.BackColor = Color.FromArgb(255, 255, 192);
             DeleteBT.Font = new Font("Arial Narrow", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            DeleteBT.Location = new Point(569, 199);
+            DeleteBT.Location = new Point(869, 12);
             DeleteBT.Name = "DeleteBT";
             DeleteBT.Size = new Size(84, 68);
             DeleteBT.TabIndex = 3;
@@ -112,7 +114,7 @@
             // 
             ExportBT.BackColor = Color.FromArgb(192, 255, 255);
             ExportBT.Font = new Font("Arial Narrow", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ExportBT.Location = new Point(569, 290);
+            ExportBT.Location = new Point(975, 12);
             ExportBT.Name = "ExportBT";
             ExportBT.Size = new Size(84, 68);
             ExportBT.TabIndex = 4;
@@ -124,7 +126,7 @@
             // 
             ImageBT.BackColor = Color.FromArgb(192, 255, 192);
             ImageBT.Font = new Font("Arial Narrow", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ImageBT.Location = new Point(569, 383);
+            ImageBT.Location = new Point(1088, 12);
             ImageBT.Name = "ImageBT";
             ImageBT.Size = new Size(84, 68);
             ImageBT.TabIndex = 5;
@@ -135,10 +137,10 @@
             // SearchTB
             // 
             SearchTB.Font = new Font("Arial Narrow", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            SearchTB.Location = new Point(519, 58);
+            SearchTB.Location = new Point(346, 26);
             SearchTB.Name = "SearchTB";
             SearchTB.PlaceholderText = "Tìm...";
-            SearchTB.Size = new Size(178, 38);
+            SearchTB.Size = new Size(380, 38);
             SearchTB.TabIndex = 6;
             SearchTB.TextChanged += SearchTB_TextChanged;
             // 

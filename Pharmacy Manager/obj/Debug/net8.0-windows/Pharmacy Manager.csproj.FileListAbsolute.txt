@@ -67,3 +67,6 @@ E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\bin\Debug\net8.0-windows\Micr
 E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\bin\Debug\net8.0-windows\Microsoft.Extensions.FileSystemGlobbing.dll
 E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\bin\Debug\net8.0-windows\Microsoft.Extensions.Primitives.dll
 E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\bin\Debug\net8.0-windows\Microsoft.IO.RecyclableMemoryStream.dll
+E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\bin\Debug\net8.0-windows\LiveCharts.dll
+E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\bin\Debug\net8.0-windows\LiveCharts.WinForms.dll
+E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\bin\Debug\net8.0-windows\LiveCharts.Wpf.dll

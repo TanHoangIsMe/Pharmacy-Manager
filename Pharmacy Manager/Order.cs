@@ -16,8 +16,6 @@ namespace Pharmacy_Manager
         {
             InitializeComponent();
             ExcelPackage.LicenseContext = LicenseContext.Commercial;
-            MedicinesDTGV.Dock = DockStyle.Left;
-            OrderDTGV.Dock = DockStyle.Right;
         }
 
         private void Order_Load(object sender, EventArgs e)
@@ -106,21 +104,13 @@ namespace Pharmacy_Manager
 
         private void ResizeDTGV()
         {
-            // Cập nhật kích thước của d1 và d2 khi Form thay đổi kích thước
-            MedicinesDTGV.Width = this.ClientSize.Width / 2 - 100;
-            OrderDTGV.Width = this.ClientSize.Width / 2 - 100;
-            OrderDTGV.Left = MedicinesDTGV.Right;
-
-            // Tính toán vị trí để Button nằm giữa màn hình
-            int centerX = (this.ClientSize.Width - AddBT.Width) / 2;
-            int centerY = (this.ClientSize.Height - AddBT.Height) / 2;
-
-            // Đặt vị trí của Button
-            AddBT.Location = new Point(centerX, centerY - 140);
-            DeleteBT.Location = new Point(centerX, centerY - 50);
-            ExportBT.Location = new Point(centerX, centerY + 50);
-            ImageBT.Location = new Point(centerX, centerY + 140);
-            SearchTB.Location = new Point(centerX - 48, centerY - 200);
+            MedicinesDTGV.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            MedicinesDTGV.Width = this.ClientSize.Width / 2; // Chiếm 50% chiều ngang ban đầu
+            MedicinesDTGV.Height = this.ClientSize.Height; // Chiều cao ban đầu
+            ////OrderDTGV.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            //OrderDTGV.Dock = DockStyle.Right;
+            ////OrderDTGV.Width = this.ClientSize.Width - MedicinesDTGV.Width;
+            //OrderDTGV.Height = this.ClientSize.Height - MedicinesDTGV.Top;
         }
 
         private void MedicinesDTGV_CellClick(object sender, DataGridViewCellEventArgs e)
