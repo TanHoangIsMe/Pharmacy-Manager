@@ -10,6 +10,7 @@ namespace Pharmacy_Manager
     {
         DataPath dataPath = new DataPath();
         string filePath;
+        string saveFilePath;
         private int selectedRowIndex = -1;
 
         public Order()
@@ -21,6 +22,7 @@ namespace Pharmacy_Manager
         private void Order_Load(object sender, EventArgs e)
         {
             filePath = dataPath.filePath;
+            saveFilePath = dataPath.saveFilePath;
             // Gọi hàm để tải dữ liệu vào DataGridView
             LoadExcelDataToDataGridView(filePath, MedicinesDTGV);
             ResizeDTGV();
@@ -159,55 +161,40 @@ namespace Pharmacy_Manager
 
         private void ExportBT_Click(object sender, EventArgs e)
         {
-            // Create a SaveFileDialog to prompt the user to select a save location
-            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+            // Tạo một workbook và worksheet mới
+            using (var workbook = new XLWorkbook())
             {
-                saveFileDialog.Filter = "Excel Files (*.xlsx)|*.xlsx";
-                saveFileDialog.Title = "Save Excel File";
+                var worksheet = workbook.Worksheets.Add("DatHangTemp");
 
-                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                // Thêm tiêu đề cột
+                for (int i = 0; i < OrderDTGV.Columns.Count; i++)
                 {
-                    // Path where the file will be saved
-                    string filePath = saveFileDialog.FileName;
-
-                    // Create a new workbook and worksheet
-                    using (var workbook = new XLWorkbook())
-                    {
-                        var worksheet =
-                            workbook.Worksheets.Add("DatHangTemp");
-
-                        // Add column headers
-                        for (int i = 0; i < OrderDTGV.Columns.Count; i++)
-                        {
-                            worksheet.Cell(1, i + 1).Value = OrderDTGV.Columns[i].HeaderText;
-                        }
-
-                        // Add row data
-                        for (int rowIndex = 0; rowIndex < OrderDTGV.Rows.Count; rowIndex++)
-                        {
-                            for (int colIndex = 0; colIndex < OrderDTGV.Columns.Count; colIndex++)
-                            {
-                                var cellValue = OrderDTGV.Rows[rowIndex].Cells[colIndex].Value;
-
-                                // Convert the object to a string
-                                if (cellValue != null)
-                                {
-                                    worksheet.Cell(rowIndex + 2, colIndex + 1).Value = cellValue.ToString();
-                                }
-                                else
-                                {
-                                    worksheet.Cell(rowIndex + 2, colIndex + 1).Value = string.Empty;
-                                }
-                            }
-                        }
-
-                        // Save the workbook to the specified file path
-                        workbook.SaveAs(filePath);
-                    }
-
-                    MessageBox.Show("Tạo File Excel Thành Công!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    worksheet.Cell(1, i + 1).Value = OrderDTGV.Columns[i].HeaderText;
                 }
+
+                // Thêm dữ liệu hàng
+                for (int rowIndex = 0; rowIndex < OrderDTGV.Rows.Count; rowIndex++)
+                {
+                    for (int colIndex = 0; colIndex < OrderDTGV.Columns.Count; colIndex++)
+                    {
+                        var cellValue = OrderDTGV.Rows[rowIndex].Cells[colIndex].Value;
+
+                        // Chuyển đổi đối tượng thành chuỗi
+                        if (cellValue != null)
+                        {
+                            worksheet.Cell(rowIndex + 2, colIndex + 1).Value = cellValue.ToString();
+                        }
+                        else
+                        {
+                            worksheet.Cell(rowIndex + 2, colIndex + 1).Value = string.Empty;
+                        }
+                    }
+                }
+                
+                // Lưu workbook vào đường dẫn đã chỉ định
+                workbook.SaveAs(saveFilePath);
             }
+            ConvertExcelToPng(saveFilePath);
         }
 
         private void ConvertExcelToPng(string excelFilePath)
@@ -316,19 +303,6 @@ namespace Pharmacy_Manager
                 }
             }
             return bitmap;
-        }
-
-        private void ImageBT_Click(object sender, EventArgs e)
-        {
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
-            {
-                openFileDialog.Filter = "Excel files (*.xlsx)|*.xlsx";
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    string filePath = openFileDialog.FileName;
-                    ConvertExcelToPng(filePath);
-                }
-            }
         }
 
         private void SearchTB_TextChanged(object sender, EventArgs e)
