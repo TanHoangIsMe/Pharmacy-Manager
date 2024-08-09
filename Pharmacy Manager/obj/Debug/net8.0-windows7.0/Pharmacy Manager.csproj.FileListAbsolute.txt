@@ -10,11 +10,6 @@ E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\obj\Debug\net8.0-windows7.0\P
 E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\obj\Debug\net8.0-windows7.0\Pharmacy Manager.AssemblyInfo.cs
 E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\obj\Debug\net8.0-windows7.0\Pharmacy Manager.csproj.CoreCompileInputs.cache
 E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\obj\Debug\net8.0-windows7.0\Pharmacy Manager.sourcelink.json
-E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\bin\Debug\net8.0-windows7.0\Pharmacy Manager.exe
-E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\bin\Debug\net8.0-windows7.0\Pharmacy Manager.deps.json
-E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\bin\Debug\net8.0-windows7.0\Pharmacy Manager.runtimeconfig.json
-E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\bin\Debug\net8.0-windows7.0\Pharmacy Manager.dll
-E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\bin\Debug\net8.0-windows7.0\Pharmacy Manager.pdb
 E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\bin\Debug\net8.0-windows7.0\ClosedXML.dll
 E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\bin\Debug\net8.0-windows7.0\DocumentFormat.OpenXml.dll
 E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\bin\Debug\net8.0-windows7.0\EPPlus.dll
@@ -34,10 +29,15 @@ E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\bin\Debug\net8.0-windows7.0\M
 E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\bin\Debug\net8.0-windows7.0\SixLabors.Fonts.dll
 E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\bin\Debug\net8.0-windows7.0\XLParser.dll
 E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\obj\Debug\net8.0-windows7.0\Pharmacy.29AA6D1E.Up2Date
-E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\obj\Debug\net8.0-windows7.0\Pharmacy Manager.dll
-E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\obj\Debug\net8.0-windows7.0\refint\Pharmacy Manager.dll
-E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\obj\Debug\net8.0-windows7.0\Pharmacy Manager.pdb
 E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\obj\Debug\net8.0-windows7.0\Pharmacy Manager.genruntimeconfig.cache
-E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\obj\Debug\net8.0-windows7.0\ref\Pharmacy Manager.dll
 E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\bin\Debug\net8.0-windows7.0\ScottPlot.dll
 E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\bin\Debug\net8.0-windows7.0\ScottPlot.WinForms.dll
+E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\bin\Debug\net8.0-windows7.0\QuanLyNhaThuoc.exe
+E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\bin\Debug\net8.0-windows7.0\QuanLyNhaThuoc.deps.json
+E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\bin\Debug\net8.0-windows7.0\QuanLyNhaThuoc.runtimeconfig.json
+E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\bin\Debug\net8.0-windows7.0\QuanLyNhaThuoc.dll
+E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\bin\Debug\net8.0-windows7.0\QuanLyNhaThuoc.pdb
+E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\obj\Debug\net8.0-windows7.0\QuanLyNhaThuoc.dll
+E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\obj\Debug\net8.0-windows7.0\refint\QuanLyNhaThuoc.dll
+E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\obj\Debug\net8.0-windows7.0\QuanLyNhaThuoc.pdb
+E:\Unity Project\Pharmacy-Manager\Pharmacy Manager\obj\Debug\net8.0-windows7.0\ref\QuanLyNhaThuoc.dll
