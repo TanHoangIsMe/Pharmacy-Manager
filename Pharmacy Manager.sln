@@ -5,7 +5,7 @@ VisualStudioVersion = 17.11.35125.118
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pharmacy Manager", "Pharmacy Manager\Pharmacy Manager.csproj", "{22C8D1B9-D554-4AD6-B548-2ACE3BDAB492}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "QuanLyNhaThuocSetUp", "QuanLyNhaThuocSetUp\QuanLyNhaThuocSetUp.vdproj", "{2417D043-CD9B-4711-8AB4-5FB1EC14E21D}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "QuanLyNhaThuoc_SetUp", "QuanLyNhaThuoc_SetUp\QuanLyNhaThuoc_SetUp.vdproj", "{90F8D9B3-E551-4EE2-87EE-6EAE26026C41}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,8 +17,8 @@ Global
 		{22C8D1B9-D554-4AD6-B548-2ACE3BDAB492}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22C8D1B9-D554-4AD6-B548-2ACE3BDAB492}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22C8D1B9-D554-4AD6-B548-2ACE3BDAB492}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2417D043-CD9B-4711-8AB4-5FB1EC14E21D}.Debug|Any CPU.ActiveCfg = Debug
-		{2417D043-CD9B-4711-8AB4-5FB1EC14E21D}.Release|Any CPU.ActiveCfg = Release
+		{90F8D9B3-E551-4EE2-87EE-6EAE26026C41}.Debug|Any CPU.ActiveCfg = Debug
+		{90F8D9B3-E551-4EE2-87EE-6EAE26026C41}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

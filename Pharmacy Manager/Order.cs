@@ -3,7 +3,6 @@ using OfficeOpenXml;
 using System.Data;
 using System.Drawing.Imaging;
 
-
 namespace Pharmacy_Manager
 {
     public partial class Order : Form
@@ -24,7 +23,12 @@ namespace Pharmacy_Manager
             filePath = dataPath.filePath;
             saveFilePath = dataPath.saveFilePath;
             // Gọi hàm để tải dữ liệu vào DataGridView
-            LoadExcelDataToDataGridView(filePath, MedicinesDTGV);
+            SetUpLoadData(filePath,MedicinesDTGV);
+        }
+
+        private void SetUpLoadData(string filePath, DataGridView dtgv)
+        {
+            LoadExcelDataToDataGridView(filePath, dtgv);
             ResizeDTGV();
             SettingDTGV(MedicinesDTGV);
             SettingDTGV(OrderDTGV);
@@ -69,11 +73,19 @@ namespace Pharmacy_Manager
         void SettingDTGV(DataGridView dataGridView)
         {
             dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+            dataGridView.Columns[0].Width = 70;
             dataGridView.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView.DefaultCellStyle.Font =
                 new Font("Arial", 12, FontStyle.Bold);
             dataGridView.ColumnHeadersDefaultCellStyle.Font =
                 new Font("Arial", 12, FontStyle.Bold);
+
+            if (dataGridView.Columns.Count > 2)
+            {
+                dataGridView.Columns[2].Width = 100;
+                dataGridView.Columns[3].Width = 150;
+                dataGridView.Columns[4].Width = 150;
+            }
         }
 
         private void AddBT_Click(object sender, EventArgs e)
@@ -81,21 +93,29 @@ namespace Pharmacy_Manager
             // Kiểm tra nếu có hàng nào được chọn
             if (MedicinesDTGV.SelectedRows.Count > 0)
             {
-                // Lấy hàng được chọn
-                DataGridViewRow selectedRow = MedicinesDTGV.SelectedRows[0];
-
-                // Lấy giá trị của cột thứ hai từ hàng được chọn
-                string columnValue = selectedRow.Cells[1].Value.ToString();
+                // Sắp xếp các hàng được chọn theo chỉ số hàng (row index)
+                var selectedRows = MedicinesDTGV.SelectedRows.Cast<DataGridViewRow>()
+                    .OrderBy(row => row.Index)
+                    .ToList();
 
                 // Tạo số thứ tự cho hàng mới (thực tế bạn có thể muốn tự động tăng số thứ tự này)
                 int rowCount = OrderDTGV.Rows.Count + 1;
 
-                // Thêm hàng mới vào d2
-                OrderDTGV.Rows.Add(rowCount, columnValue, 0);
+                foreach (DataGridViewRow selectedRow in selectedRows)
+                {
+                    // Lấy giá trị của cột thứ hai từ hàng được chọn
+                    string columnValue = selectedRow.Cells[1].Value?.ToString() ?? string.Empty;
+
+                    // Thêm hàng mới vào OrderDTGV
+                    OrderDTGV.Rows.Add(rowCount, columnValue, 0, "", "");
+
+                    // Tăng số thứ tự cho hàng tiếp theo
+                    rowCount++;
+                }
             }
             else
             {
-                MessageBox.Show("Vui lòng chọn một thuốc!");
+                MessageBox.Show("Vui lòng chọn ít nhất một hàng thuốc!");
             }
         }
 
@@ -106,12 +126,12 @@ namespace Pharmacy_Manager
 
         private void ResizeDTGV()
         {
-            MedicinesDTGV.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            MedicinesDTGV.Width = this.ClientSize.Width / 2; // Chiếm 50% chiều ngang ban đầu
-            MedicinesDTGV.Height = this.ClientSize.Height; // Chiều cao ban đầu
-            OrderDTGV.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            OrderDTGV.Width = this.ClientSize.Width / 2;
-            OrderDTGV.Height = this.ClientSize.Height;
+            MedicinesDTGV.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Bottom;
+            OrderDTGV.Dock = DockStyle.Right;
+            // Cập nhật kích thước bảng bên trái
+            MedicinesDTGV.Width = this.ClientSize.Width / 2 - 100;
+            MedicinesDTGV.Height = this.ClientSize.Height;
+            OrderDTGV.Width = this.ClientSize.Width / 2 + 80;
         }
 
         private void MedicinesDTGV_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -161,69 +181,49 @@ namespace Pharmacy_Manager
 
         private void ExportBT_Click(object sender, EventArgs e)
         {
-            // Tạo một workbook và worksheet mới
-            using (var workbook = new XLWorkbook())
+            // Khởi tạo OpenFileDialog để chọn file Excel
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
-                var worksheet = workbook.Worksheets.Add("DatHangTemp");
+                // Đặt tiêu đề cho hộp thoại
+                openFileDialog.Title = "Chọn file Excel";
+                // Đặt bộ lọc định dạng file
+                openFileDialog.Filter = "Excel Files (*.xlsx)|*.xlsx|All Files (*.*)|*.*";
+                // Đặt đường dẫn mặc định cho hộp thoại lưu file
+                openFileDialog.InitialDirectory = @"D:\PharmacyManager\PharmacyData\DatHang";
 
-                // Thêm tiêu đề cột
-                for (int i = 0; i < OrderDTGV.Columns.Count; i++)
+                // Hiển thị hộp thoại và kiểm tra nếu người dùng chọn file
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    worksheet.Cell(1, i + 1).Value = OrderDTGV.Columns[i].HeaderText;
-                }
+                    // Lấy đường dẫn file từ hộp thoại
+                    string saveFilePath = openFileDialog.FileName;
 
-                // Thêm dữ liệu hàng
-                for (int rowIndex = 0; rowIndex < OrderDTGV.Rows.Count; rowIndex++)
-                {
-                    for (int colIndex = 0; colIndex < OrderDTGV.Columns.Count; colIndex++)
+                    // Thêm thời gian vào tên thư mục để tạo tên duy nhất mỗi lần chạy
+                    string timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss");
+                    string outputDirectory = Path.Combine(Path.GetDirectoryName(saveFilePath), $"DatHang_{timestamp}");
+
+                    // Tạo thư mục nếu chưa tồn tại
+                    if (!Directory.Exists(outputDirectory))
                     {
-                        var cellValue = OrderDTGV.Rows[rowIndex].Cells[colIndex].Value;
+                        Directory.CreateDirectory(outputDirectory);
+                    }
 
-                        // Chuyển đổi đối tượng thành chuỗi
-                        if (cellValue != null)
+                    using (var package = new ExcelPackage(new FileInfo(saveFilePath)))
+                    {
+                        var worksheet = package.Workbook.Worksheets[0]; // Giả sử làm việc với worksheet đầu tiên
+                        int totalRows = worksheet.Dimension.Rows;
+                        int rowsPerPage = 23;
+
+                        for (int startRow = 1; startRow <= totalRows; startRow += rowsPerPage)
                         {
-                            worksheet.Cell(rowIndex + 2, colIndex + 1).Value = cellValue.ToString();
-                        }
-                        else
-                        {
-                            worksheet.Cell(rowIndex + 2, colIndex + 1).Value = string.Empty;
+                            int endRow = Math.Min(startRow + rowsPerPage - 1, totalRows);
+                            Bitmap bitmap = CreateBitmapFromWorksheet(worksheet, startRow, endRow);
+                            string outputPath = Path.Combine(outputDirectory, $"Hình_{startRow / rowsPerPage + 1}.png");
+                            bitmap.Save(outputPath, ImageFormat.Png);
                         }
                     }
-                }
-                
-                // Lưu workbook vào đường dẫn đã chỉ định
-                workbook.SaveAs(saveFilePath);
-            }
-            ConvertExcelToPng(saveFilePath);
-        }
-
-        private void ConvertExcelToPng(string excelFilePath)
-        {
-            // Thêm thời gian vào tên thư mục để tạo tên duy nhất mỗi lần chạy
-            string timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss");
-            string outputDirectory = Path.Combine(Path.GetDirectoryName(excelFilePath), $"DatHang_{timestamp}");
-
-            // Tạo thư mục nếu chưa tồn tại
-            if (!Directory.Exists(outputDirectory))
-            {
-                Directory.CreateDirectory(outputDirectory);
-            }
-
-            using (var package = new ExcelPackage(new FileInfo(excelFilePath)))
-            {
-                var worksheet = package.Workbook.Worksheets[0]; // Giả sử làm việc với worksheet đầu tiên
-                int totalRows = worksheet.Dimension.Rows;
-                int rowsPerPage = 25;
-
-                for (int startRow = 1; startRow <= totalRows; startRow += rowsPerPage)
-                {
-                    int endRow = Math.Min(startRow + rowsPerPage - 1, totalRows);
-                    Bitmap bitmap = CreateBitmapFromWorksheet(worksheet, startRow, endRow);
-                    string outputPath = Path.Combine(outputDirectory, $"Hình_{startRow / rowsPerPage + 1}.png");
-                    bitmap.Save(outputPath, ImageFormat.Png);
+                    MessageBox.Show("Tạo Hình Thành Công!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            MessageBox.Show("Tạo Hình Thành Công!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private Bitmap CreateBitmapFromWorksheet(ExcelWorksheet worksheet, int startRow, int endRow)
@@ -233,12 +233,20 @@ namespace Pharmacy_Manager
             int height = 3507; // 11.69 inches * 300 dpi
 
             // Chiều rộng cố định của cột 1 và cột 3
-            int column1Width = 150;
+            int column1Width = 170;
             int column3Width = 350;
+            // Chiều rộng của cột 4 và cột 5 (các cột mới)
+            int column4Width = 450; 
+            int column5Width = 450;
+
+            int fixedRowHeight = 151;
+            int numberOfRows = endRow - startRow + 1;
 
             // Tính chiều rộng của cột 2
-            int column2Width = width - column1Width - column3Width;
-            int rowHeight = height / (endRow - startRow + 1); // Kích thước của mỗi hàng
+            int column2Width = width - column1Width - column3Width - column4Width - column5Width;
+            // Tính chiều cao tổng của hình ảnh dựa trên số lượng hàng và chiều cao hàng cố định
+            int totalHeight = fixedRowHeight * numberOfRows;
+
 
             Bitmap bitmap = new Bitmap(width, height);
             using (Graphics graphics = Graphics.FromImage(bitmap))
@@ -269,16 +277,26 @@ namespace Pharmacy_Manager
                                 x = column1Width;
                                 columnWidth = column2Width;
                             }
-                            else // col == 3
+                            else if (col == 3)
                             {
                                 x = column1Width + column2Width;
                                 columnWidth = column3Width;
                             }
+                            else if (col == 4)
+                            {
+                                x = column1Width + column2Width + column3Width;
+                                columnWidth = column4Width;
+                            }
+                            else // col == 5
+                            {
+                                x = column1Width + column2Width + column3Width + column4Width;
+                                columnWidth = column5Width;
+                            }
 
-                            float y = (row - startRow) * rowHeight;
+                            float y = (row - startRow) * fixedRowHeight;
 
                             // Vẽ văn bản vào hình ảnh
-                            graphics.DrawString(cellValue, font, Brushes.Black, new RectangleF(x, y, columnWidth, rowHeight));
+                            graphics.DrawString(cellValue, font, Brushes.Black, new RectangleF(x, y, columnWidth, fixedRowHeight));
                         }
                     }
                 }
@@ -289,16 +307,18 @@ namespace Pharmacy_Manager
                     // Vẽ đường kẻ dọc
                     graphics.DrawLine(pen, column1Width, 0, column1Width, height); // Sau cột 1
                     graphics.DrawLine(pen, column1Width + column2Width, 0, column1Width + column2Width, height); // Sau cột 2
+                    graphics.DrawLine(pen, column1Width + column2Width + column3Width, 0, column1Width + column2Width + column3Width, height); // Sau cột 3
+                    graphics.DrawLine(pen, column1Width + column2Width + column3Width + column4Width, 0, column1Width + column2Width + column3Width + column4Width, height); // Sau cột 4
 
                     // Vẽ đường kẻ ngang
                     for (int row = startRow; row <= endRow; row++)
                     {
-                        float y = (row - startRow) * rowHeight;
+                        float y = (row - startRow) * fixedRowHeight;
                         graphics.DrawLine(pen, 0, y, width, y); // Trên cùng của từng hàng
                     }
 
                     // Vẽ đường kẻ dưới cùng của hàng cuối cùng
-                    float lastRowY = (endRow - startRow + 1) * rowHeight;
+                    float lastRowY = (endRow - startRow + 1) * fixedRowHeight;
                     graphics.DrawLine(pen, 0, lastRowY, width, lastRowY);
                 }
             }
@@ -322,6 +342,96 @@ namespace Pharmacy_Manager
 
                 // Áp dụng bộ lọc cho DataTable
                 dataTable.DefaultView.RowFilter = filterExpression;
+            }
+        }
+
+        private void SaveBT_Click(object sender, EventArgs e)
+        {
+            // Khởi tạo SaveFileDialog
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+            {
+                // Đặt tiêu đề cho hộp thoại
+                saveFileDialog.Title = "Lưu file Excel";
+                // Đặt bộ lọc định dạng file
+                saveFileDialog.Filter = "Excel Files (*.xlsx)|*.xlsx|All Files (*.*)|*.*";
+                // Đặt tên file mặc định
+                saveFileDialog.FileName = "DatHang.xlsx";
+
+                // Đặt đường dẫn mặc định cho hộp thoại lưu file
+                saveFileDialog.InitialDirectory = @"D:\PharmacyManager\PharmacyData\DatHang";
+
+                // Hiển thị hộp thoại và kiểm tra nếu người dùng nhấn nút Save
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    // Lấy đường dẫn file từ hộp thoại
+                    string saveFilePath = saveFileDialog.FileName;
+                    // Tạo một workbook và worksheet mới
+                    using (var workbook = new XLWorkbook())
+                    {
+                        var worksheet = workbook.Worksheets.Add("DatHangTemp");
+
+                        // Thêm tiêu đề cột
+                        for (int i = 0; i < OrderDTGV.Columns.Count; i++)
+                        {
+                            worksheet.Cell(1, i + 1).Value = OrderDTGV.Columns[i].HeaderText;
+                        }
+
+                        // Thêm dữ liệu hàng
+                        for (int rowIndex = 0; rowIndex < OrderDTGV.Rows.Count; rowIndex++)
+                        {
+                            for (int colIndex = 0; colIndex < OrderDTGV.Columns.Count; colIndex++)
+                            {
+                                var cellValue = OrderDTGV.Rows[rowIndex].Cells[colIndex].Value;
+
+                                // Chuyển đổi đối tượng thành chuỗi
+                                if (cellValue != null)
+                                {
+                                    worksheet.Cell(rowIndex + 2, colIndex + 1).Value = cellValue.ToString();
+                                }
+                                else
+                                {
+                                    worksheet.Cell(rowIndex + 2, colIndex + 1).Value = string.Empty;
+                                }
+                            }
+                        }
+
+                        // Lưu workbook vào đường dẫn đã chỉ định
+                        workbook.SaveAs(saveFilePath);
+                    }
+                    MessageBox.Show("Lưu File Đặt Hàng Thành Công!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+
+        private void OpenBT_Click(object sender, EventArgs e)
+        {
+            // Khởi tạo OpenFileDialog
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                // Đặt tiêu đề cho hộp thoại
+                openFileDialog.Title = "Chọn file Excel";
+                // Đặt bộ lọc định dạng file
+                openFileDialog.Filter = "Excel Files (*.xlsx)|*.xlsx|All Files (*.*)|*.*";
+                // Đặt đường dẫn mặc định cho hộp thoại lưu file
+                openFileDialog.InitialDirectory = @"D:\PharmacyManager\PharmacyData\DatHang";
+
+                // Hiển thị hộp thoại và kiểm tra nếu người dùng chọn file
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    // Lấy đường dẫn file từ hộp thoại
+                    string filePath = openFileDialog.FileName;
+
+                    try
+                    {
+                        OrderDTGV.Columns.Clear();
+                        SetUpLoadData(filePath, OrderDTGV);
+                    }
+                    catch (Exception ex)
+                    {
+                        // Xử lý lỗi nếu có
+                        MessageBox.Show("Lỗi khi đọc file Excel: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
         }
     }

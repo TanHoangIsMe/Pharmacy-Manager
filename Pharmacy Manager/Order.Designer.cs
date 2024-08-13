@@ -37,6 +37,10 @@
             DeleteBT = new Button();
             ExportBT = new Button();
             SearchTB = new TextBox();
+            SaveBT = new Button();
+            OpenBT = new Button();
+            Price = new DataGridViewTextBoxColumn();
+            Total = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)MedicinesDTGV).BeginInit();
             ((System.ComponentModel.ISupportInitialize)OrderDTGV).BeginInit();
             SuspendLayout();
@@ -45,22 +49,22 @@
             // 
             MedicinesDTGV.Anchor = AnchorStyles.None;
             MedicinesDTGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            MedicinesDTGV.Location = new Point(12, 86);
+            MedicinesDTGV.Location = new Point(12, 130);
             MedicinesDTGV.Name = "MedicinesDTGV";
             MedicinesDTGV.RowHeadersWidth = 51;
-            MedicinesDTGV.Size = new Size(543, 478);
+            MedicinesDTGV.Size = new Size(543, 434);
             MedicinesDTGV.TabIndex = 0;
             MedicinesDTGV.CellClick += MedicinesDTGV_CellClick;
             // 
             // OrderDTGV
             // 
-            OrderDTGV.Anchor = AnchorStyles.None;
+            OrderDTGV.Anchor = AnchorStyles.Right;
             OrderDTGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            OrderDTGV.Columns.AddRange(new DataGridViewColumn[] { STT, MedicineName, Quantity });
-            OrderDTGV.Location = new Point(627, 86);
+            OrderDTGV.Columns.AddRange(new DataGridViewColumn[] { STT, MedicineName, Quantity, Price, Total });
+            OrderDTGV.Location = new Point(561, 12);
             OrderDTGV.Name = "OrderDTGV";
             OrderDTGV.RowHeadersWidth = 51;
-            OrderDTGV.Size = new Size(545, 478);
+            OrderDTGV.Size = new Size(611, 552);
             OrderDTGV.TabIndex = 1;
             OrderDTGV.CellClick += OrderDTGV_CellClick;
             // 
@@ -89,7 +93,7 @@
             // 
             AddBT.BackColor = Color.FromArgb(255, 192, 192);
             AddBT.Font = new Font("Arial Narrow", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            AddBT.Location = new Point(873, 12);
+            AddBT.Location = new Point(12, 56);
             AddBT.Name = "AddBT";
             AddBT.Size = new Size(84, 68);
             AddBT.TabIndex = 2;
@@ -101,7 +105,7 @@
             // 
             DeleteBT.BackColor = Color.FromArgb(255, 255, 192);
             DeleteBT.Font = new Font("Arial Narrow", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            DeleteBT.Location = new Point(981, 12);
+            DeleteBT.Location = new Point(102, 56);
             DeleteBT.Name = "DeleteBT";
             DeleteBT.Size = new Size(84, 68);
             DeleteBT.TabIndex = 3;
@@ -113,23 +117,61 @@
             // 
             ExportBT.BackColor = Color.FromArgb(192, 255, 255);
             ExportBT.Font = new Font("Arial Narrow", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ExportBT.Location = new Point(1088, 12);
+            ExportBT.Location = new Point(372, 56);
             ExportBT.Name = "ExportBT";
             ExportBT.Size = new Size(84, 68);
             ExportBT.TabIndex = 4;
-            ExportBT.Text = "Xuất File";
+            ExportBT.Text = "Xuất Ảnh";
             ExportBT.UseVisualStyleBackColor = false;
             ExportBT.Click += ExportBT_Click;
             // 
             // SearchTB
             // 
             SearchTB.Font = new Font("Arial Narrow", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            SearchTB.Location = new Point(466, 26);
+            SearchTB.Location = new Point(12, 12);
             SearchTB.Name = "SearchTB";
-            SearchTB.PlaceholderText = "Tìm...";
-            SearchTB.Size = new Size(380, 38);
+            SearchTB.PlaceholderText = "Tìm Thuốc...";
+            SearchTB.Size = new Size(444, 38);
             SearchTB.TabIndex = 6;
             SearchTB.TextChanged += SearchTB_TextChanged;
+            // 
+            // SaveBT
+            // 
+            SaveBT.BackColor = Color.FromArgb(255, 192, 255);
+            SaveBT.Font = new Font("Arial Narrow", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            SaveBT.Location = new Point(192, 56);
+            SaveBT.Name = "SaveBT";
+            SaveBT.Size = new Size(84, 68);
+            SaveBT.TabIndex = 7;
+            SaveBT.Text = "Lưu File";
+            SaveBT.UseVisualStyleBackColor = false;
+            SaveBT.Click += SaveBT_Click;
+            // 
+            // OpenBT
+            // 
+            OpenBT.BackColor = Color.FromArgb(192, 255, 192);
+            OpenBT.Font = new Font("Arial Narrow", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            OpenBT.Location = new Point(282, 56);
+            OpenBT.Name = "OpenBT";
+            OpenBT.Size = new Size(84, 68);
+            OpenBT.TabIndex = 8;
+            OpenBT.Text = "Mở File";
+            OpenBT.UseVisualStyleBackColor = false;
+            OpenBT.Click += OpenBT_Click;
+            // 
+            // Price
+            // 
+            Price.HeaderText = "Đơn Giá";
+            Price.MinimumWidth = 6;
+            Price.Name = "Price";
+            Price.Width = 125;
+            // 
+            // Total
+            // 
+            Total.HeaderText = "Tổng";
+            Total.MinimumWidth = 6;
+            Total.Name = "Total";
+            Total.Width = 125;
             // 
             // Order
             // 
@@ -137,6 +179,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(192, 192, 255);
             ClientSize = new Size(1184, 576);
+            Controls.Add(OpenBT);
+            Controls.Add(SaveBT);
             Controls.Add(SearchTB);
             Controls.Add(ExportBT);
             Controls.Add(DeleteBT);
@@ -166,5 +210,9 @@
         private Button DeleteBT;
         private Button ExportBT;
         private TextBox SearchTB;
+        private Button SaveBT;
+        private Button OpenBT;
+        private DataGridViewTextBoxColumn Price;
+        private DataGridViewTextBoxColumn Total;
     }
 }
