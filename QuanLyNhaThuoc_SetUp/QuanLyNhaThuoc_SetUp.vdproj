@@ -15,13 +15,7 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_A1EB516B34A54ED399380545AA444C7E"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_F12B6A91E370455A8D2F926914F6565B"
+        "MsmKey" = "8:_C468EC30DB0F44B0865321297D62F7A1"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -43,6 +37,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -59,6 +61,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -76,30 +86,20 @@
         {
             "LaunchCondition"
             {
+                "{A06ECF26-33A3-4562-8140-9B0E340D4F24}:_6C692B0F57BF4B518A280821BE1E9CF9"
+                {
+                "Name" = "8:.NET Core"
+                "Message" = "8:[VSDNETCOREMSG]"
+                "AllowLaterVersions" = "11:FALSE"
+                "InstallUrl" = "8:https://dotnet.microsoft.com/download/dotnet-core/[NetCoreVerMajorDotMinor]"
+                "IsNETCore" = "11:TRUE"
+                "Architecture" = "2:0"
+                "Runtime" = "2:0"
+                }
             }
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A1EB516B34A54ED399380545AA444C7E"
-            {
-            "SourcePath" = "8:C:\\Users\\TanHoang\\Downloads\\Icon.ico"
-            "TargetName" = "8:Icon.ico"
-            "Tag" = "8:"
-            "Folder" = "8:_4D440AE09D0248DDB6960CBECACE22CF"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
         }
         "FileType"
         {
@@ -277,20 +277,6 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_10C5B266C6284201890C98A358D8E7AA"
-            {
-            "Name" = "8:QuanLyNhaThuoc"
-            "Arguments" = "8:"
-            "Description" = "8:"
-            "ShowCmd" = "3:1"
-            "IconIndex" = "3:0"
-            "Transitive" = "11:FALSE"
-            "Target" = "8:_F12B6A91E370455A8D2F926914F6565B"
-            "Folder" = "8:_790FA28FE4404BDA81B0D0EE96382835"
-            "WorkingFolder" = "8:_4D440AE09D0248DDB6960CBECACE22CF"
-            "Icon" = "8:_A1EB516B34A54ED399380545AA444C7E"
-            "Feature" = "8:"
-            }
         }
         "UserInterface"
         {
@@ -690,7 +676,7 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_F12B6A91E370455A8D2F926914F6565B"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_C468EC30DB0F44B0865321297D62F7A1"
             {
             "SourcePath" = "8:..\\Pharmacy Manager\\obj\\Debug\\net8.0-windows7.0\\apphost.exe"
             "TargetName" = "8:"
